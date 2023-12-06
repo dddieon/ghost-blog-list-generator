@@ -1,4 +1,4 @@
-const generate = () => {
+const generate2 = () => {
   // 스타일 동적으로 추가
   var style = document.createElement("style");
   style.textContent = `
@@ -11,20 +11,19 @@ const generate = () => {
     .gh-content {
       position: relative;
       display: grid;
-      width: max-content;
     }
   
-    .toc-wrapper {
+    .gh-content .toc-wrapper {
       position: absolute;
       height: 100%;
       width: 200px;
-      right: -200px;
+      right: -226px;
       order: 2;
     }
   
-    .toc-list {
+    .gh-content .toc-list {
       position: sticky;
-      top: 150px;
+      top: 100px;
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -34,46 +33,48 @@ const generate = () => {
       gap: 2px;
     }
   
-    .toc-list ul, .toc-list li {
+    .gh-content .toc-list ul, .gh-content .toc-list li {
       list-style: none;
       padding: 2px 0;
     }
   
-    .toc-list ul {
+    .gh-content .toc-list ul {
       margin-left: 6px;
     }
   
-    .toc-list > li {
+    .gh-content .toc-list > li {
+      margin: 0;
       padding: 4px 0 4px 26px;
       border-radius: 2px;
     }
   
-    .toc-list > li:hover {
+    .gh-content .toc-list > li:hover {
       background: rgb(240, 240, 240);
     }
   
-    .toc-list div {
+    .gh-content .toc-list div {
       display: flex;
       align-items: center;
       gap: 2px;
     }
   
-    .toc-link {
-      color: #333;
+    .gh-content .toc-list .toc-link {
+      margin: 0;
       display: block; 
+      color: #333;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       text-decoration: none !important;
       font-size: 0.82em;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
       transition: color 0.3s ease;
     }
   
-    .toc-link:hover {
+    .gh-content .toc-link:hover {
         color: #007bff;
     }
   
-    .toggle-btn {
+    .gh-content .toggle-btn {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -88,11 +89,11 @@ const generate = () => {
       background-position: center center;
     }
   
-    .toggle-btn:not(.close) {
+    .gh-content .toggle-btn:not(.close) {
       transform: rotate(180deg);
     }
   
-    .hidden {
+    .gh-content .hidden {
         display: none;
     }
   `;
@@ -173,4 +174,4 @@ function toggleChildren(btn) {
   }
 }
 
-generate();
+generate2();
